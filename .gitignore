@@ -1,40 +1,30 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-### Environment Files ###
+# Root level
+.DS_Store
 .env
 .env.local
 .env.*.local
+.vscode/
 
-application.properties
+# Server specific
+server/target/
+server/.mvn/wrapper/maven-wrapper.jar
+server/**/src/main/**/target/
+server/**/src/test/**/target/
+server/.idea/
+server/*.iws
+server/*.iml
+server/*.ipr
+server/application.properties
+
+# Client specific
+client/node_modules/
+client/.next/
+client/out/
+client/.pnp
+client/.pnp.js
+client/.yarn/*
+client/coverage/
+client/build/
+client/*.log
+client/.vercel
+client/*.tsbuildinfo
