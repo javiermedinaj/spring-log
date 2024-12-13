@@ -14,7 +14,7 @@ server/.idea/
 server/*.iws
 server/*.iml
 server/*.ipr
-server/application.properties
+
 
 # Client specific
 client/node_modules/
