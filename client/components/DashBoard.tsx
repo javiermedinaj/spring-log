@@ -1,9 +1,9 @@
-import { LoginDemo } from "./custom/login-demo";
+import { DashboardDemo } from "./custom/dashboard-demo";  
 
 export default function Example() {
   return (
     <div className="flex min-h-screen items-center justify-center p-4 bg-background">
-      <LoginDemo />
+      <DashboardDemo />
     </div>
   );
 }
