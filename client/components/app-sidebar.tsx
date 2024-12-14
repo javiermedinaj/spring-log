@@ -4,18 +4,15 @@ import * as React from "react"
 import {
   AudioWaveform,
   BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
+  ShoppingCart,
+  UsersIcon, // Asegúrate de que este icono exista en Lucide
+  CreditCard,
   SquareTerminal,
+  GalleryVerticalEnd,
+  Command,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
 import {
@@ -26,12 +23,12 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
+// Datos de navegación
 const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/avatar.png", // Asegúrate de que la ruta sea correcta
   },
   teams: [
     {
@@ -52,42 +49,29 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
+      title: "Dashboard",
+      url: "/dashboard",
       icon: SquareTerminal,
-     },
+    },
     {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-     
+      title: "Orders",
+      url: "/dashboard/orders",
+      icon: ShoppingCart, // Reemplazado de Bot a ShoppingCart
+    },
+    {
+      title: "Users",
+      url: "/dashboard/users",
+      icon: UsersIcon, // Asegúrate de que el icono exista
+    },
+    {
+      title: "Billing",
+      url: "/dashboard/billing",
+      icon: CreditCard,
     },
     {
       title: "Documentation",
-      url: "#",
+      url: "/dashboard/documentation",
       icon: BookOpen,
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 }
@@ -100,7 +84,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
