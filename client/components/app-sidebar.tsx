@@ -5,7 +5,7 @@ import {
   AudioWaveform,
   BookOpen,
   ShoppingCart,
-  UsersIcon, // Asegúrate de que este icono exista en Lucide
+  UsersIcon, 
   CreditCard,
   SquareTerminal,
   GalleryVerticalEnd,
@@ -23,12 +23,12 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// Datos de navegación
+
 const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatar.png", // Asegúrate de que la ruta sea correcta
+    avatar: "/avatar.png", 
   },
   teams: [
     {
@@ -56,12 +56,7 @@ const data = {
     {
       title: "Orders",
       url: "/dashboard/orders",
-      icon: ShoppingCart, // Reemplazado de Bot a ShoppingCart
-    },
-    {
-      title: "Users",
-      url: "/dashboard/users",
-      icon: UsersIcon, // Asegúrate de que el icono exista
+      icon: ShoppingCart,
     },
     {
       title: "Billing",
@@ -73,6 +68,11 @@ const data = {
       url: "/dashboard/documentation",
       icon: BookOpen,
     },
+    {
+      title: "Home",
+      url: "/",
+      icon: Command,
+    }
   ],
 }
 

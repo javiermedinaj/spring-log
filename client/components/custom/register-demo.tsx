@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function LoginDemo() {
+export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -22,37 +22,28 @@ export function LoginDemo() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null); 
+    setError(null);
 
     try {
-      const response = await axios.post("http://localhost:8082/auth/login", {
-        username: email, 
+      const response = await axios.post("http://localhost:8082/auth/register", {
+        username: email,
         password,
       });
 
-      const { token } = response.data;
-      if (token) {
-        localStorage.setItem("token", token);
-        router.push("/dashboard");
-      } else {
-        setError("Token no recibido desde el servidor");
-      }
+      alert("Registro exitoso. Puedes iniciar sesión ahora.");
+      router.push("/login");
     } catch (err: any) {
-      console.error("Error en el login:", err);
-      setError(err.response?.data || "Error en el login");
+      console.error("Error en el registro:", err);
+      setError(err.response?.data || "Error en el registro");
     }
-  };
-
-  const handleGoogleLogin = () => {
-    alert("Funcionalidad de login con Google en desarrollo");
   };
 
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
-        <CardTitle className="text-2xl">Login</CardTitle>
+        <CardTitle className="text-2xl">Regístrate</CardTitle>
         <CardDescription>
-          Ingresa tu email y contraseña para acceder a tu cuenta
+          Crea una cuenta ingresando tus detalles
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -70,12 +61,7 @@ export function LoginDemo() {
               />
             </div>
             <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Contraseña</Label>
-                <Link href="#" className="ml-auto inline-block text-sm underline">
-                  ¿Olvidaste tu contraseña?
-                </Link>
-              </div>
+              <Label htmlFor="password">Contraseña</Label>
               <Input
                 id="password"
                 type="password"
@@ -90,21 +76,14 @@ export function LoginDemo() {
               </div>
             )}
             <Button type="submit" className="w-full">
-              Login
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={handleGoogleLogin}
-            >
-              Login con Google
+              Registrarse
             </Button>
           </div>
         </form>
         <div className="mt-4 text-center text-sm">
-          ¿No tienes una cuenta?{" "}
-          <Link href="/signup" className="underline">
-            Regístrate
+          ¿Ya tienes una cuenta?{" "}
+          <Link href="/login" className="underline">
+            Inicia sesión
           </Link>
         </div>
       </CardContent>

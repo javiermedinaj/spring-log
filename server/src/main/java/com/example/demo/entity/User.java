@@ -1,25 +1,24 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "users_sb")
+@Data
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private String password;
 
-    // Getters and setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // Lombok will generate getters and setters
 
     public String getUsername() {
         return username;
@@ -37,7 +36,7 @@ public class User {
         this.password = password;
     }
 
-    // toString
+    //toString
     @Override
     public String toString() {
         return "User{" +

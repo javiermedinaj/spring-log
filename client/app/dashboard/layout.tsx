@@ -6,8 +6,6 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset } from "@/components/ui/sidebar";
 import { Menu } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function DashboardLayout({
   children,
@@ -16,7 +14,6 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-    <Navbar />
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
@@ -26,7 +23,6 @@ export default function DashboardLayout({
         {children}
       </SidebarInset>
     </SidebarProvider>
-    <Footer />
     </>
   );
 }

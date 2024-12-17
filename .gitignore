@@ -14,6 +14,7 @@ server/.idea/
 server/*.iws
 server/*.iml
 server/*.ipr
+server/src/main/resources/application.properties
 
 
 # Client specific
