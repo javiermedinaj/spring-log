@@ -16,6 +16,8 @@ server/*.iml
 server/*.ipr
 server/src/main/resources/application.properties
 
+# Ignorar archivos de propiedades sensibles en el backend
+server/src/main/resources/application.properties
 
 # Client specific
 client/node_modules/
